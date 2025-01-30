@@ -1,5 +1,4 @@
 import { create } from "zustand";
-
 import { DriverStore, LocationStore, MarkerData } from "@/types/type";
 
 export const useLocationStore = create<LocationStore>((set) => ({
@@ -28,7 +27,6 @@ export const useLocationStore = create<LocationStore>((set) => ({
     const { selectedDriver, clearSelectedDriver } = useDriverStore.getState();
     if (selectedDriver) clearSelectedDriver();
   },
-
   setDestinationLocation: ({
     latitude,
     longitude,

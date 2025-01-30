@@ -1,4 +1,5 @@
 import { SignedIn, SignedOut, useUser } from "@clerk/clerk-expo";
+import * as Location from "expo-location";
 import { Link } from "expo-router";
 import {
   FlatList,
