@@ -16,6 +16,7 @@ import GoogleTextInput from "@/components/GoogleTextInput";
 import Map from "@/components/Map";
 import { useLocationStore } from "@/app/store";
 import { useState, useEffect } from "react";
+import * as Location from "expo-location";
 
 const recentRides = [
   {
@@ -129,7 +130,7 @@ export default function Page() {
   const { user } = useUser();
   const loading = true;
 
-  const [hasPermissions, setHasPermissions] = useState(false);
+  const [hasPermissions, setHasPermission] = useState<boolean>(false);
 
   const handleSignOut = () => {};
   const handleDestinationPress = () => {};
@@ -138,7 +139,7 @@ export default function Page() {
     (async () => {
       let { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== "granted") {
-        setHasPermissions(false);
+        setHasPermission(false);
         return;
       }
 

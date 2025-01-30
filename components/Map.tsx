@@ -12,9 +12,8 @@ const Map = () => {
         tintColor="black"
         mapType="mutedStandard"
         showsPointsOfInterest={false}
-        // initialRegion={region}
         showsUserLocation={true}
-        userInterfaceStyle="light"
+        userInterfaceStyle="dark"
       ></MapView>
     </View>
   );
